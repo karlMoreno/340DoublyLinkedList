@@ -6,7 +6,7 @@
 #define INC_340DOUBLYLINKEDLIST_LINKEDLIST_H
 
 
-#include "Node.h"
+#include "node.h"
 #include <string>
 
 //declared linkedlist class and added private and public elements.

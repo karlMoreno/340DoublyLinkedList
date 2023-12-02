@@ -1,5 +1,11 @@
-//
-// Created by Subhan Khan on 11/29/23.
-//
+#include <iostream>
+#include "LinkedList.h"
 
 
+int main() {
+
+    LinkedList myList;
+
+    myList.print();
+    return 0;
+}
