@@ -6,9 +6,12 @@
 #define INC_340DOUBLYLINKEDLIST_TEST_H
 
 
-class test {
+void testNodeBasic();
+void testLinkedListBasic ();
+void testNodeCompOperators ();
+int getTestMenuChoice ();
+void promptUnitTest();
 
-};
 
 
 #endif //INC_340DOUBLYLINKEDLIST_TEST_H
