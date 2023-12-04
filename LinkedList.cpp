@@ -1,22 +1,25 @@
 #include "LinkedList.h"
 #include <iostream>
+template<typename T>
+LinkedList<T>::LinkedList() : head(nullptr), tail(nullptr), listSize(0) {}
 
-LinkedList::LinkedList() : head(nullptr), tail(nullptr), listSize(0) {}
+template<typename T>
+LinkedList<T>::LinkedList(const T& entry) : head(new Node<T>(entry)), tail(head), listSize(1) {}
 
-LinkedList::LinkedList(const std::string& word) : head(new Node(word)), tail(head), listSize(1) {}
-
-LinkedList::~LinkedList() {
-    Node* current = head;
+template<typename T>
+LinkedList<T>::~LinkedList() {
+    Node<T>* current = head;
     while (current != nullptr) {
-        Node* next = current->getNext();
+        Node<T>* next = current->getNext();
         delete current;
         current = next;
     }
 }
 
 // linked list push back operation
-void LinkedList::push_back(const std::string& word) {
-    Node* newNode = new Node(word);
+template<typename T>
+void LinkedList<T>::push_back(const T& entry) {
+    Node<T>* newNode = new Node<T>(entry);
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
@@ -29,45 +32,53 @@ void LinkedList::push_back(const std::string& word) {
 }
 
 // Nodes in linked list
-int LinkedList::size() const {
+template<typename T>
+int LinkedList<T>::size() const {
     return listSize;
 }
 
-Node* LinkedList::getHead() const {
+template<typename T>
+Node<T>* LinkedList<T>::getHead() const {
     return head;
 }
 
-Node* LinkedList::getTail() const {
+template<typename T>
+Node<T>* LinkedList<T>::getTail() const {
     return tail;
 }
 
-Node* LinkedList::deleteWord(Node* nodeToDelete) {
-    if (!nodeToDelete) {
-        return nullptr;
-    }
+template<typename T>
+Node<T>* LinkedList<T>::deleteEntry(Node<T>* nodeToDelete) {
+    if (nodeToDelete != nullptr) {
 
-    Node* nextNode = nodeToDelete->getNext();
+        Node<T> *nextNode = nodeToDelete->getNext();
 
-    if (nodeToDelete == head) {
-        head = nextNode;
-    }
-    if (nodeToDelete == tail) {
-        tail = nodeToDelete->getPrev();
-    }
-    if (nodeToDelete->getPrev()) {
-        nodeToDelete->getPrev()->setNext(nextNode);
-    }
-    if (nextNode) {
-        nextNode->setPrev(nodeToDelete->getPrev());
-    }
+        if (nodeToDelete == head) {
+            head = nextNode;
+        }
+        if (nodeToDelete == tail) {
+            tail = nodeToDelete->getPrev();
+        }
+        if (nodeToDelete->getPrev()) {
+            nodeToDelete->getPrev()->setNext(nextNode);
+        }
+        if (nextNode) {
+            nextNode->setPrev(nodeToDelete->getPrev());
+        }
 
-    delete nodeToDelete;
-    listSize--;
-    return nextNode;
+        delete nodeToDelete;
+        listSize--;
+        return nextNode;
+    }
+    else{
+        throw std::invalid_argument("Received null pointer");
+    }
+    return nullptr;
 }
 
-Node* LinkedList::insert_before(const std::string& newWord, Node* knownNode) {
-    Node* newNode = new Node(newWord);
+template<typename T>
+Node<T>* LinkedList<T>::insert_before(const T& newWord, Node<T>* knownNode) {
+    Node<T>* newNode = new Node<T>(newWord);
 
 
     if (head == nullptr || knownNode == head) {
@@ -81,7 +92,7 @@ Node* LinkedList::insert_before(const std::string& newWord, Node* knownNode) {
         head = newNode;
     } else {
 
-        Node* prevNode = (knownNode != nullptr) ? knownNode->getPrev() : tail;
+        Node<T>* prevNode = (knownNode != nullptr) ? knownNode->getPrev() : tail;
         newNode->setNext(knownNode);
         newNode->setPrev(prevNode);
 
@@ -101,10 +112,11 @@ Node* LinkedList::insert_before(const std::string& newWord, Node* knownNode) {
     return newNode;
 }
 
-void LinkedList::print() const {
-    Node* current = head;
+template<typename T>
+void LinkedList<T>::print() const {
+    Node<T>* current = head;
     while (current != nullptr) {
-        std::cout << current->getWord() << std::endl;
+        std::cout << current->getEntry() << std::endl;
         current = current->getNext();
     }
 }

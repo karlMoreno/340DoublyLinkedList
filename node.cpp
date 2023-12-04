@@ -1,102 +1,135 @@
 #include "Node.h"
 
-Node::Node(std::string w) : word(w), next(nullptr), prev(nullptr) {}
 
-std::string Node::getWord() const {
-    return word;
+template<typename T>
+Node<T>::Node() : next(nullptr), prev(nullptr) {}
+
+template<typename T>
+Node<T>::Node(const T& entry) : data(entry), next(nullptr), prev(nullptr) {}
+
+template<typename T>
+const T& Node<T>::getEntry() const {
+    return data;
 }
 
-void Node::setWord(const std::string& w) {
-    word = w;
+template<typename T>
+void Node<T>::setEntry(const T& entry) {
+    this->data = entry;
 }
 
-Node* Node::getNext() const {
+template<typename T>
+Node<T>* Node<T>::getNext() const {
     return next;
 }
 
-void Node::setNext(Node* n) {
+template<typename T>
+void Node<T>::setNext(Node* n) {
     next = n;
 }
 
-Node* Node::getPrev() const {
+template<typename T>
+Node<T>* Node<T>::getPrev() const {
     return prev;
 }
 
-void Node::setPrev(Node* p) {
+template<typename T>
+void Node<T>::setPrev(Node* p) {
     prev = p;
 }
 
+// todo fix issues with operator overload
 
+/*
 // member functions
-bool Node::operator==(const std::string& rhs) const {
-    return word == rhs;
+template<typename T>
+bool Node<T>::operator==(const Node<T>& other) const {
+    return this->data == other.getEntry();
 }
 
-bool Node::operator!=(const std::string& rhs) const {
-    return word != rhs;
+template<typename T>
+bool Node<T>::operator!=(const Node& other) const {
+    return data != other.data;
 }
 
-bool Node::operator>(const std::string& rhs) const {
-    return word > rhs;
+template<typename T>
+bool Node<T>::operator>(const Node& other) const {
+    return data > other.data;
 }
 
-bool Node::operator<(const std::string& rhs) const {
-    return word < rhs;
+template<typename T>
+bool Node<T>::operator<(const Node& other) const {
+    return data < other.data;
 }
 
-bool Node::operator>=(const std::string& rhs) const {
-    return word >= rhs;
+template<typename T>
+bool Node<T>::operator>=(const Node& other) const {
+    return data >= other.data;
 }
 
-bool Node::operator<=(const std::string& rhs) const {
-    return word <= rhs;
+template<typename T>
+bool Node<T>::operator<=(const Node& other) const {
+    return data <= other.data;
 }
 
-// Non-member functions  
-bool operator>(const std::string& lhs, const Node& rhs) {
-    return lhs > rhs.getWord();
+template<typename T>
+bool Node<T>::operator==(const T& rhs) const {
+    return data == rhs;
 }
 
-bool operator<(const std::string& lhs, const Node& rhs) {
-    return lhs < rhs.getWord();
+template<typename T>
+bool Node<T>::operator!=(const T& rhs) const {
+    return data != rhs;
 }
 
-bool operator>=(const std::string& lhs, const Node& rhs) {
-    return lhs >= rhs.getWord();
+template<typename T>
+bool Node<T>::operator>(const T& rhs) const {
+    return data > rhs;
 }
 
-bool operator<=(const std::string& lhs, const Node& rhs) {
-    return lhs <= rhs.getWord();
+template<typename T>
+bool Node<T>::operator<(const T& rhs) const {
+    return data < rhs;
 }
 
-bool operator==(const std::string& lhs, const Node& rhs) {
-    return lhs == rhs.getWord();
+template<typename T>
+bool Node<T>::operator>=(const T& rhs) const {
+    return data >= rhs;
 }
 
-bool operator!=(const std::string& lhs, const Node& rhs) {
-    return lhs != rhs.getWord();
+template<typename T>
+bool Node<T>::operator<=(const T& rhs) const {
+    return data <= rhs;
 }
 
-bool Node::operator==(const Node& other) const {
-    return word == other.word;
+// Definitions of non-member functions
+template<typename T>
+bool operator==(const T& lhs, const Node<T>& rhs) {
+    return lhs == rhs.getEntry();
 }
 
-bool Node::operator!=(const Node& other) const {
-    return word != other.word;
+template<typename T>
+bool operator!=(const T& lhs, const Node<T>& rhs) {
+    return lhs != rhs.getEntry();
 }
 
-bool Node::operator>(const Node& other) const {
-    return word > other.word;
+template<typename T>
+bool operator>(const T& lhs, const Node<T>& rhs) {
+    return lhs > rhs.getEntry();
 }
 
-bool Node::operator<(const Node& other) const {
-    return word < other.word;
+template<typename T>
+bool operator<(const T& lhs, const Node<T>& rhs) {
+    return lhs < rhs.getEntry();
 }
 
-bool Node::operator>=(const Node& other) const {
-    return word >= other.word;
+template<typename T>
+bool operator>=(const T& lhs, const Node<T>& rhs) {
+    return lhs >= rhs.getEntry();
 }
 
-bool Node::operator<=(const Node& other) const {
-    return word <= other.word;
+
+template<typename T>
+bool operator<=(const T& lhs, const Node<T>& rhs) {
+    return lhs <= rhs.getEntry();
 }
+*/

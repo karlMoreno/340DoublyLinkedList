@@ -2,46 +2,54 @@
 #define INC_340DOUBLYLINKEDLIST_NODE_H
 
 
-#include <string>
+//#include <string>
 
 // declared node with public and private elements.
+template<typename T>
 class Node {
 private:
-    std::string word;
+    T data;
     Node* next;
     Node* prev;
 
 public:
-    Node(std::string w = "");
-    std::string getWord() const;
-    void setWord(const std::string& w);
+    Node();
+    Node(const T& entry);
+    const T& getEntry() const;
+    void setEntry(const T& entry);
     Node* getNext() const;
     void setNext(Node* n);
     Node* getPrev() const;
     void setPrev(Node* p);
 
+
     // declaration of operators
-    bool operator==(const Node& other) const;
-    bool operator>(const Node& other) const;
-    bool operator<(const Node& other) const;
-    bool operator>=(const Node& other) const;
-    bool operator<=(const Node& other) const;
-    bool operator!=(const Node& other) const;
+    bool operator==(const Node<T>& other) const;
+    bool operator>(const Node<T>& other) const;
+    bool operator<(const Node<T>& other) const;
+    bool operator>=(const Node<T>& other) const;
+    bool operator<=(const Node<T>& other) const;
+    bool operator!=(const Node<T>& other) const;
 
 
-    bool operator==(const std::string& rhs) const;
-    bool operator!=(const std::string& rhs) const;
-    bool operator>(const std::string& rhs) const;
-    bool operator<(const std::string& rhs) const;
-    bool operator>=(const std::string& rhs) const;
-    bool operator<=(const std::string& rhs) const;
+    bool operator==(const T& rhs) const;
+    bool operator!=(const T& rhs) const;
+    bool operator>(const T& rhs) const;
+    bool operator<(const T& rhs) const;
+    bool operator>=(const T& rhs) const;
+    bool operator<=(const T& rhs) const;
+
+   friend bool operator==(const T& lhs, const Node<T>& rhs);
+   friend bool operator!=(const T& lhs, const Node<T>& rhs);
+   friend bool operator>(const T& lhs, const Node<T>& rhs);
+   friend bool operator<(const T& lhs, const Node<T>& rhs);
+   friend bool operator>=(const T& lhs, const Node<T>& rhs);
+   friend bool operator<=(const T& lhs, const Node<T>& rhs);
+
 };
 
 
-bool operator==(const std::string& lhs, const Node& rhs);
-bool operator!=(const std::string& lhs, const Node& rhs);
-bool operator>(const std::string& lhs, const Node& rhs);
-bool operator<(const std::string& lhs, const Node& rhs);
-bool operator>=(const std::string& lhs, const Node& rhs);
-bool operator<=(const std::string& lhs, const Node& rhs);
+
+
+
 #endif

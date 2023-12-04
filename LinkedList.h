@@ -10,23 +10,23 @@
 #include <string>
 
 //declared linkedlist class and added private and public elements.
+template<typename T>
 class LinkedList {
 private:
-    Node* head;
-    Node* tail;
+    Node<T>* head;
+    Node<T>* tail;
     int listSize;
 
-// public definitions that are used in linkedlist.cpp
 public:
     LinkedList();
-    explicit LinkedList(const std::string& word);
+    explicit LinkedList(const T& data);
     ~LinkedList();
-    void push_back(const std::string& word);
-    Node* insert_before(const std::string& newWord, Node* knownNode);
+    void push_back(const T& data);
+    Node<T>* insert_before(const T& newData, Node<T>* knownNode);
     int size() const;
-    Node* getHead() const;
-    Node* getTail() const;
-    Node* deleteWord(Node* nodeToDelete);
+    Node<T>* getHead() const;
+    Node<T>* getTail() const;
+    Node<T>* deleteEntry(Node<T>* nodeToDelete);
     void print() const;
 };
 
