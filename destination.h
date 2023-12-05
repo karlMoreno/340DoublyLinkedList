@@ -10,13 +10,15 @@
 
 class destination {
 private:
-    LinkedList* currentLocation;
-    Node* nextLocation;
+    int currentFloor;
+
+
+    LinkedList<> nextLocation;
 
     timeCycle time;
 public:
     destination(const LinkedList& currentLocation, const LinkedList&);
-    //todo use linked list nodes as indiviual locations ex. head node == first floor
+    //todo use linked list nodes as individual locations ex. head node == first floor
     timeCycle getNextLocationTime();
     void setNextLocationTime();
     bool isTimeForNextLocation();

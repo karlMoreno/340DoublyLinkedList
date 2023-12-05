@@ -23,7 +23,7 @@ Node<T>* Node<T>::getNext() const {
 }
 
 template<typename T>
-void Node<T>::setNext(Node* n) {
+void Node<T>::setNext(Node<T>* n) {
     next = n;
 }
 
@@ -33,17 +33,17 @@ Node<T>* Node<T>::getPrev() const {
 }
 
 template<typename T>
-void Node<T>::setPrev(Node* p) {
+void Node<T>::setPrev(Node<T>* p) {
     prev = p;
 }
 
-// todo fix issues with operator overload
+// todo test overload functions
 
-/*
+
 // member functions
 template<typename T>
 bool Node<T>::operator==(const Node<T>& other) const {
-    return this->data == other.getEntry();
+    return this->data == other.data;
 }
 
 template<typename T>
@@ -132,4 +132,3 @@ template<typename T>
 bool operator<=(const T& lhs, const Node<T>& rhs) {
     return lhs <= rhs.getEntry();
 }
-*/

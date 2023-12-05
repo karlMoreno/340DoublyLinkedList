@@ -9,18 +9,18 @@ template<typename T>
 class Node {
 private:
     T data;
-    Node* next;
-    Node* prev;
+    Node<T>* next;
+    Node<T>* prev;
 
 public:
     Node();
     Node(const T& entry);
     const T& getEntry() const;
     void setEntry(const T& entry);
-    Node* getNext() const;
-    void setNext(Node* n);
-    Node* getPrev() const;
-    void setPrev(Node* p);
+    Node<T>* getNext() const;
+    void setNext(Node<T>* n);
+    Node<T>* getPrev() const;
+    void setPrev(Node<T>* p);
 
 
     // declaration of operators
@@ -47,7 +47,7 @@ public:
    friend bool operator<=(const T& lhs, const Node<T>& rhs);
 
 };
-
+#include "node.cpp"
 
 
 

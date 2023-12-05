@@ -15,7 +15,7 @@ class LinkedList {
 private:
     Node<T>* head;
     Node<T>* tail;
-    int listSize;
+    size_t listSize;
 
 public:
     LinkedList();
@@ -26,8 +26,12 @@ public:
     int size() const;
     Node<T>* getHead() const;
     Node<T>* getTail() const;
-    Node<T>* deleteEntry(Node<T>* nodeToDelete);
+    void deleteEntry(Node<T>* nodeToDelete);
+    void clear();
     void print() const;
 };
 
+
+
+#include "LinkedList.cpp"
 #endif

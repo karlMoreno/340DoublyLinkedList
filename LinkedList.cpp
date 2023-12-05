@@ -20,7 +20,7 @@ LinkedList<T>::~LinkedList() {
 template<typename T>
 void LinkedList<T>::push_back(const T& entry) {
     Node<T>* newNode = new Node<T>(entry);
-    if (head == nullptr) {
+    if (!head) {
         head = newNode;
         tail = newNode;
     } else {
@@ -48,7 +48,7 @@ Node<T>* LinkedList<T>::getTail() const {
 }
 
 template<typename T>
-Node<T>* LinkedList<T>::deleteEntry(Node<T>* nodeToDelete) {
+void LinkedList<T>::deleteEntry(Node<T>* nodeToDelete) {
     if (nodeToDelete != nullptr) {
 
         Node<T> *nextNode = nodeToDelete->getNext();
@@ -68,12 +68,9 @@ Node<T>* LinkedList<T>::deleteEntry(Node<T>* nodeToDelete) {
 
         delete nodeToDelete;
         listSize--;
-        return nextNode;
+
     }
-    else{
-        throw std::invalid_argument("Received null pointer");
-    }
-    return nullptr;
+
 }
 
 template<typename T>
@@ -110,6 +107,18 @@ Node<T>* LinkedList<T>::insert_before(const T& newWord, Node<T>* knownNode) {
 
     listSize++;
     return newNode;
+}
+
+template<typename T>
+void LinkedList<T>::clear() {
+    Node<T>* current = head;
+    while(current != nullptr){
+        Node<T>* next = current->getNext();
+        delete current;
+        current = next;
+    }
+    head = tail = nullptr;
+    listSize = 0;
 }
 
 template<typename T>
