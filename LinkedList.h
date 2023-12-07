@@ -1,7 +1,3 @@
-//
-// Created by Subhan Khan on 12/2/23.
-//
-
 #ifndef INC_340DOUBLYLINKEDLIST_LINKEDLIST_H
 #define INC_340DOUBLYLINKEDLIST_LINKEDLIST_H
 
