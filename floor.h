@@ -11,7 +11,7 @@ class floor {
 private:
     int numFloors;
     int maxOccupancy;
-    LinkedList<person> peopleOnFloor;
+    LinkedList<Person> peopleOnFloor;
 
 public:
     void addPerson();

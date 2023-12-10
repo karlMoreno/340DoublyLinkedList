@@ -2,24 +2,25 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include <string>
 
+#include <string>
+#include "../destination.h"
 // Destination class?
-class Destination;
+
 
 class Person {
 private:
     std::string name;
     int age;
     int weight;
-    Destination destination;
+    class destination destination;
 
 public:
-    Person(std::string name, int age, Destination destination, int weight);
+    Person(std::string name, int age, class destination destination, int weight);
     std::string getName() const;
     int getAge() const;
     int getWeight() const;
-    Destination getDestination() const;
+    class destination getDestination() const;
 };
 
 #endif

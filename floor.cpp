@@ -4,8 +4,8 @@
 
 #include "floor.h"
 
-#include "Floor.h"
-
-void Floor::addRoom(const Room& room) {
+/*
+void floor::addRoom(const Room& room) {
     rooms.push_back(room);
 }
+ */

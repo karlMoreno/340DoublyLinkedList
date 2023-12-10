@@ -3,12 +3,11 @@
 //
 
 #include "elevator.h"
-#include "person/person.h"
+#include <iostream>
 
+elevator::elevator(int numFloors, int maxOccupancy) : numFloors(numFloors), maxOccupancy(maxOccupancy), currentFloor(1), passengers() {}
 
-elevator::elevator(int numFloors) : numFloors(numFloors), currentFloor(1), passengers() {}
-
-void elevator::addPerson(const person &person) {
+void elevator::addPerson(const Person &person) {
     passengers.push_back(person);
 }
 
@@ -17,14 +16,14 @@ void elevator::move(int destinationFloor) {
         std::cout << "Invalid destination floor!" << std::endl;
         return;
     }
-    while (passengers.size() > 0 && passengers.getHead()->getEntry().getCurrentFloor() != destinationFloor) {
-        Node<person> *passengerNode = passengers.getHead();
-        person &passenger = passengerNode->getEntry();
+    while (passengers.size() > 0 && passengers.getHead()->getEntry().getDestination().getCurrentFloor() != destinationFloor) {
+        Node<Person> *passengerNode = passengers.getHead();
+        const Person &passenger = passengerNode->getEntry();
 
         std::cout << "Moving " << passenger.getName() << " from floor "
-                  << passenger.getCurrentFloor() << " to floor " << destinationFloor << std::endl;
+                  << passenger.getDestination().getCurrentFloor() << " to floor " << destinationFloor << std::endl;
 
-        passenger.setCurrentFloor(destinationFloor);
+        passenger.getDestination().setCurrentFloor(destinationFloor);
 
         passengers.deleteEntry(passengerNode);
     }
@@ -39,7 +38,6 @@ int elevator::getCurrentFloor() const {
 bool elevator::isFull() const {
     return false;
 }
-
 void elevator::clearElevator() {
     passengers.clear();
 }
@@ -52,7 +50,7 @@ int elevator::getNumPassengers() const {
     return passengers.size();
 }
 
-LinkedList<person> elevator::getPassengerList() const {
+LinkedList<Person> elevator::getPassengerList() const {
     return passengers;
 }
 

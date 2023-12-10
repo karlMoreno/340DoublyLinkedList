@@ -1,12 +1,14 @@
-#include <iostream
-#include "LinkedList.h"
+
+#include "tests/elevatorTest.h"
+
 
 
 
 int main() {
+    elevatorTest();
+    //LinkedList myList;
 
-    LinkedList myList;
 
-    myList.print();
+    //myList.print();
     return 0;
 }

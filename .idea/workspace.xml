@@ -17,15 +17,32 @@
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug-event-trace" ENABLED="true" CONFIG_NAME="Debug" GENERATION_OPTIONS="--profiling-format=google-trace --profiling-output=CMakeFiles/clion-event-trace.json" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aba3556e-c19a-4b61-a446-59af9ed6bbf3" name="Changes" comment="Updated Node and LinkedList classes to be generic and added new classes&#10;&#10;Refactored Node and LinkedList classes to template classes to support generic data types, improving reusability of the code. New classes: timeCycle, destination, elevator, and floor were added to support new features in the application. Node class functions were updated to better adhere to the Single Responsibility Principle.">
-      <change afterPath="$PROJECT_DIR$/building.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/building.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/elevatorTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/elevatorTest.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/LinkedList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/destination.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/destination.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/destination.h" beforeDir="false" afterPath="$PROJECT_DIR$/destination.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doubLinkedList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elevator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/elevator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elevator.h" beforeDir="false" afterPath="$PROJECT_DIR$/elevator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/floor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/floor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/floor.h" beforeDir="false" afterPath="$PROJECT_DIR$/floor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node.h" beforeDir="false" afterPath="$PROJECT_DIR$/node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person/person.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/person/person.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/person/person.h" beforeDir="false" afterPath="$PROJECT_DIR$/person/person.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeCycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/timeCycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeCycle.h" beforeDir="false" afterPath="$PROJECT_DIR$/timeCycle.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,18 +111,21 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
       <recent name="$PROJECT_DIR$/person" />
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="C/C++ File.main.cpp">
+  <component name="RunManager" selected="CMake Application.340DoublyLinkedList">
     <configuration name="340DoublyLinkedList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -156,7 +176,9 @@
       <workItem from="1701284738005" duration="1945000" />
       <workItem from="1701547390252" duration="3843000" />
       <workItem from="1701653323470" duration="18534000" />
-      <workItem from="1701900625915" duration="3345000" />
+      <workItem from="1702165551330" duration="9019000" />
+      <workItem from="1702175157240" duration="157000" />
+      <workItem from="1702175326586" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Node and LinkedList classes to be generic and added new classes&#10;&#10;Refactored Node and LinkedList classes to template classes to support generic data types, improving reusability of the code. New classes: timeCycle, destination, elevator, and floor were added to support new features in the application. Node class functions were updated to better adhere to the Single Responsibility Principle.">
       <option name="closed" value="true" />
@@ -195,6 +217,17 @@
     <MESSAGE value="added timeCycle, destination " />
     <MESSAGE value="Updated Node and LinkedList classes to be generic and added new classes&#10;&#10;Refactored Node and LinkedList classes to template classes to support generic data types, improving reusability of the code. New classes: timeCycle, destination, elevator, and floor were added to support new features in the application. Node class functions were updated to better adhere to the Single Responsibility Principle." />
     <option name="LAST_COMMIT_MESSAGE" value="Updated Node and LinkedList classes to be generic and added new classes&#10;&#10;Refactored Node and LinkedList classes to template classes to support generic data types, improving reusability of the code. New classes: timeCycle, destination, elevator, and floor were added to support new features in the application. Node class functions were updated to better adhere to the Single Responsibility Principle." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/elevatorTest.cpp</url>
+          <line>59</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,6 @@
 #ifndef INC_340DOUBLYLINKEDLIST_LINKEDLIST_H
 #define INC_340DOUBLYLINKEDLIST_LINKEDLIST_H
-
+#pragma once
 
 #include "node.h"
 #include <string>
@@ -29,5 +29,5 @@ public:
 
 
 
-#include "LinkedList.cpp"
+//#include "LinkedList.cpp"
 #endif

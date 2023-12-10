@@ -4,10 +4,10 @@
 
 #ifndef INC_340DOUBLYLINKEDLIST_ELEVATOR_H
 #define INC_340DOUBLYLINKEDLIST_ELEVATOR_H
-
-#include "LinkedList.h"
+#pragma once
+//#include "LinkedList.h"
 #include "person/person.h"
-#include "node.h"
+
 
 class elevator {
 
@@ -17,17 +17,18 @@ class elevator {
     int currentPassengers{0};
     int currentFloor{0};
     int numFloors;
-    LinkedList<person> passengers;
+    LinkedList<Person> passengers;
 public:
-    elevator(int numFloors);
-    void addPerson(const person& person);
+    elevator(int numFloors, int maxOccupancy);
+    void addPerson(const Person& person);
     void move(int destinationFloor);
     int getCurrentFloor() const;
     bool isFull() const;
     bool isEmpty() const;
     void clearElevator();
     int getNumPassengers() const;
-    LinkedList<person> getPassengerList() const;
+    LinkedList<Person> getPassengerList() const;
+
 
 
 };

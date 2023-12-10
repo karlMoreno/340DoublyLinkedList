@@ -19,12 +19,15 @@ public:
     void setCurrentTime(const std::chrono::time_point<std::chrono::system_clock> &currentTime);
     const std::chrono::time_point<std::chrono::system_clock> &getCurrentTime() const;
 
-    bool checkTime();
+    bool checkTime() const;
     void startTime();
     void updateTime();
     void resetTime();
     std::chrono::duration<double> elapsedTime();
     void advanceTime(int minutes);
+
+    timeCycle& operator=(const timeCycle& other);
+
 };
 
 

@@ -1,7 +1,7 @@
-#include "Person.h"
+#include "person.h"
 // Include other necessary headers, such as "Destination.h" if it exists
 
-Person::Person(std::string name, int age, Destination destination, int weight)
+Person::Person(std::string name, int age, class destination destination, int weight)
         : name(name), age(age), destination(destination), weight(weight) {}
 
 std::string Person::getName() const {
@@ -16,6 +16,6 @@ int Person::getWeight() const {
     return weight;
 }
 
-Destination Person::getDestination() const {
+destination Person::getDestination() const {
     return destination;
 }

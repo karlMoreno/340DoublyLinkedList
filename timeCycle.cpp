@@ -18,7 +18,7 @@ const std::chrono::time_point<std::chrono::system_clock> &timeCycle::getCurrentT
     return current_time;
 }
 
-bool timeCycle::checkTime() {
+bool timeCycle::checkTime() const {
     std::chrono::duration<double> elapsed_time = current_time - start_time;
     return elapsed_time >= Day;
 }
@@ -42,4 +42,12 @@ std::chrono::duration<double> timeCycle::elapsedTime() {
 
 void timeCycle::advanceTime(int minutes) {
     current_time += std::chrono::minutes(minutes);
+}
+
+timeCycle &timeCycle::operator=(const timeCycle &other) {
+    if(this != &other){
+        start_time = other.start_time;
+        current_time = other.current_time;
+    }
+    return *this;
 }

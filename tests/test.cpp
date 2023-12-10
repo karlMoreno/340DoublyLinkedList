@@ -41,6 +41,7 @@ void testPrivate () {
 void testNodeBasic() {
     // test #A: create Node
     {
+        /*
         cout << "\n-----Test A --------------------" << endl;
         Node * tNodePtr = new Node("");
 
@@ -103,7 +104,9 @@ void testNodeBasic() {
         tNextPtr = NULL;
         delete tPrevPtr;
         tPrevPtr = NULL;
+         */
     }
+
 
 } // end testNodeBasic()
 
@@ -111,6 +114,7 @@ void testNodeBasic() {
 
 void testNodeCompOperators () {
     // test #D: test comparison operators, Node v Node
+    /*
     {
         cout << "\n-----Test D --------------------" << endl;
         Node * tNodeAptr = new Node("apple");
@@ -306,6 +310,7 @@ void testNodeCompOperators () {
         delete tNodeCptr;
         tNodeCptr = NULL;
     }
+     */
 
 
 
@@ -314,6 +319,7 @@ void testNodeCompOperators () {
 
 void testLinkedListBasic () {
     // test #X: create empty list, check NULL
+    /*
     {
         cout << "\n-----Test LL_A --------------------" << endl;
         LinkedList * lTestPtr = new LinkedList;
@@ -342,13 +348,18 @@ void testLinkedListBasic () {
         delete lTestPtr;
         lTestPtr = NULL;
     }
+*/
 
 
 } //end testLinkedListBasic()
 
+
+
 int getTestMenuChoice () {
+    /*
 
     int choiceOption;
+
 
     do {
         choiceOption = -678123; //init with unlikely value so it will loop again if no valid input is entered
@@ -361,14 +372,14 @@ int getTestMenuChoice () {
              << "  (" << RUN_ALL <<") Run all tests \n"
              << "Enter a number from 1 to " << max_test_menu_option << ", or " << DONE << " to exit: ";
         cin >> choiceOption;
-        /* check for failure of cin (for instance, when data type read in is not int */
+        // check for failure of cin (for instance, when data type read in is not int
         if (cin.fail()) {
             cin.clear();
             //discard bad characters
-            /*zyBooks rejects: cin.ignore (numeric_limits<streamsize>::max(), '\n');
-             */
+            //zyBooks rejects: cin.ignore (numeric_limits<streamsize>::max(), '\n');
+
         }
-        /* check if input is in valid range */
+        // check if input is in valid range
         if ( (choiceOption < 0) || (choiceOption > max_test_menu_option) ) {
             cout << "\nError! Input must be a number between 1 and " << max_test_menu_option
                  << ", or " << DONE << " to exit." << endl;
@@ -378,14 +389,17 @@ int getTestMenuChoice () {
     } while (choiceOption == -678123);
 
 
-    return choiceOption;
 
+    return choiceOption;
+    */
 
 } // end getTestMenuChoice()
 
 
+
 void promptUnitTest() {
-    /* variables */
+    /*
+
     int menuChoice;
 
     do {
@@ -417,5 +431,5 @@ void promptUnitTest() {
 
 
     } while (menuChoice != 0);
-
+    */
 } //end promptUnitTest()

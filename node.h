@@ -1,5 +1,6 @@
 #ifndef INC_340DOUBLYLINKEDLIST_NODE_H
 #define INC_340DOUBLYLINKEDLIST_NODE_H
+#pragma once
 
 
 //#include <string>
@@ -14,7 +15,7 @@ private:
 
 public:
     Node();
-    Node(const T& entry);
+    explicit Node(const T& entry);
     const T& getEntry() const;
     void setEntry(const T& entry);
     Node<T>* getNext() const;
@@ -47,7 +48,7 @@ public:
    friend bool operator<=(const T& lhs, const Node<T>& rhs);
 
 };
-#include "node.cpp"
+//#include "node.cpp"
 
 
 
